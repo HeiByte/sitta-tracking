@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Informasi Stok Bahan Ajar | SITTA</title>
+    <link rel="stylesheet" href="css/stok.css" />
+    <script src="js/data.js"></script>
+  </head>
+
+  <body>
+    <!-- Sidebar Navigasi -->
+    <nav class="sidebar">
+      <div class="logo">
+        <h1>SITTA</h1>
+      </div>
+
+      <ul class="menu">
+        <li><a href="dashboard.html">Home</a></li>
+        <li><a href="#" class="active">Informasi Bahan Ajar</a></li>
+        <li><a href="tracking.html">Tracking Pengiriman</a></li>
+        <li class="dropdown">
+          <a href="#">Laporan</a>
+          <ul class="submenu">
+            <li><a href="#">Monitoring Progress DO</a></li>
+            <li><a href="#">Rekap Bahan Ajar</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Histori Transaksi</a></li>
+      </ul>
+    </nav>
+
+    <!-- Konten Utama -->
+    <main class="main-content">
+      <header class="header">
+        <h2 id="greetingText">Selamat datang 👋</h2>
+        <p id="userInfo"></p>
+      </header>
+
+      <section class="stok-section">
+        <h3>Informasi Stok Bahan Ajar</h3>
+        <p>Berikut daftar stok bahan ajar yang tersedia:</p>
+
+        <!-- Tabel Stok -->
+        <table id="tabelStok" border="1" cellpadding="8">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Cover</th>
+              <th>Kode Lokasi</th>
+              <th>Kode Barang</th>
+              <th>Nama Barang</th>
+              <th>Jenis</th>
+              <th>Edisi</th>
+              <th>Stok</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+    </main>
+
+    <script src="js/stok.js"></script>
+  </body>
+</html>

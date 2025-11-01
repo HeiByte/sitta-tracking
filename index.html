@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/login.css" />
+  </head>
+  <body>
+    <!-- Menu Utama -->
+    <main>
+      <div class="login-card">
+        <header>
+          <h1>Selamat Datang</h1>
+          <p>Silahkan masuk ke akun Anda</p>
+        </header>
+
+        <form id="loginForm" class="login-form">
+          <div class="input-group">
+            <input
+              type="text"
+              id="email"
+              name="username"
+              placeholder=" "
+              required
+            />
+            <label for="username">email</label>
+            <span class="input-icon"></span>
+          </div>
+          <div class="input-group">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder=" "
+              required
+            />
+            <label for="username">password</label>
+            <span class="input-icon"></span>
+          </div>
+
+          <div class="from-options">
+            <label> <input type="checkbox" /> Ingat saya </label>
+            <div class="class">
+              <a href="#" id="forgotBtn">lupa password?</a>
+            </div>
+          </div>
+
+          <button type="submit" class="login-btn" id="loginBtn">
+            <span>Masuk</span>
+          </button>
+        </form>
+        <div class="register-link">
+          Belum punya akun? <a href="#" id="registerBtn">Daftar disini</a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Modal Lupa Password -->
+    <div id="forgotModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeForgot">&times;</span>
+        <h3>Lupa Password</h3>
+        <p>Silakan hubungi admin@ut.ac.id untuk reset password Anda.</p>
+      </div>
+    </div>
+
+    <!-- Modal Daftar -->
+    <div id="registerModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeRegister">&times;</span>
+        <h3>Form Pendaftaran</h3>
+      </div>
+    </div>
+  </body>
+  <script src="js/data.js"></script>
+  <script src="/js/login.js"></script>
+</html>

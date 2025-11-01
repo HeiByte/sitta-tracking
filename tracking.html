@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tracking Pengiriman | SITTA</title>
+    <link rel="stylesheet" href="css/tracking.css" />
+    <script src="js/data.js"></script>
+  </head>
+
+  <body>
+    <nav class="sidebar">
+      <div class="logo">
+        <h1>SITTA</h1>
+      </div>
+
+      <ul class="menu">
+         <li><a href="dashboard.html">Home</a></li>
+        <li><a href="stok.html">Informasi Bahan Ajar</a></li>
+        <li><a href="#" class="active">Tracking Pengiriman</a></li>
+        <li class="dropdown">
+          <a href="#">Laporan</a>
+          <ul class="submenu">
+            <li><a href="#">Monitoring Progress DO</a></li>
+            <li><a href="#">Rekap Bahan Ajar</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Histori Transaksi Bahan Ajar</a></li>
+      </ul>
+    </nav>
+
+    <main class="main-content">
+      <header class="header">
+        <h2 id="greetingText">Selamat datang 👋</h2>
+        <p id="userInfo"></p>
+      </header>
+
+      <section class="tracking-section">
+        <h3>Tracking Pengiriman Bahan Ajar</h3>
+        <p>
+          Masukkan nomor Delivery Order (DO) untuk melihat status pengiriman.
+        </p>
+
+        <div class="form-group">
+          <label for="doInput">Nomor DO:</label>
+          <input type="text" id="doInput" placeholder="Contoh: 2023001234" />
+          <button id="searchBtn">Cari</button>
+        </div>
+
+        <div class="result" id="trackingResult" style="display: none;">
+          <h4>Hasil Tracking</h4>
+          <p><strong>Nama Mahasiswa:</strong> <span id="namaMahasiswa"></span></p>
+          <p><strong>Nomor DO:</strong> <span id="nomorDO"></span></p>
+          <p><strong>Status:</strong> <span id="statusPengiriman"></span></p>
+          <p><strong>Ekspedisi:</strong> <span id="ekspedisi"></span></p>
+          <p><strong>Tanggal Kirim:</strong> <span id="tanggalKirim"></span></p>
+          <p><strong>Jenis Paket:</strong> <span id="jenisPaket"></span></p>
+          <p><strong>Total Pembayaran:</strong> <span id="totalPembayaran"></span></p>
+
+          <div class="progress-container">
+            <label>Progress Pengiriman:</label>
+            <progress id="progressBar" value="0" max="100"></progress>
+          </div>
+
+          <h4>Riwayat Perjalanan:</h4>
+          <ul id="listPerjalanan"></ul>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/tracking.js"></script>
+  </body>
+</html>
