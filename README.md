@@ -18,3 +18,4 @@ Proyek ini merupakan tugas praktikum pembuatan website menggunakan **HTML, CSS, 
 - Tampilan modern dengan UI/UX sederhana  
 
 ---
+// © 2025 Iqbal Maulana Yusuf
