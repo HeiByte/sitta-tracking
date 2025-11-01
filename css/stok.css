@@ -1,0 +1,328 @@
+/* ===== VARIABLES & RESET ===== */
+:root {
+  --primary-bg: #ffffff;
+  --secondary-bg: #f8fafc;
+  --card-bg: #ffffff;
+  --sidebar-bg: #ffffff;
+  --accent-color: #4f46e5;
+  --accent-hover: #4338ca;
+  --accent-light: #e0e7ff;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+  --border-color: #e2e8f0;
+  --border-light: #f1f5f9;
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --error-color: #ef4444;
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --border-radius: 8px;
+  --border-radius-sm: 6px;
+  --sidebar-width: 280px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--secondary-bg);
+  color: var(--text-primary);
+  line-height: 1.6;
+  display: flex;
+  min-height: 100vh;
+  font-weight: 400;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  width: var(--sidebar-width);
+  background-color: var(--sidebar-bg);
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--border-light);
+  box-shadow: var(--shadow);
+  z-index: 100;
+}
+
+.logo {
+  margin-bottom: 2.5rem;
+  padding: 0 0.5rem;
+}
+
+.logo h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  letter-spacing: -0.5px;
+}
+
+.menu {
+  list-style: none;
+  flex-grow: 1;
+}
+
+.menu li {
+  margin-bottom: 0.5rem;
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+}
+
+.menu a {
+  display: flex;
+  align-items: center;
+  padding: 0.875rem 1rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-radius: var(--border-radius-sm);
+  gap: 0.75rem;
+}
+
+.menu a:hover {
+  background-color: var(--accent-light);
+  color: var(--accent-color);
+}
+
+.menu a.active {
+  background-color: var(--accent-color);
+  color: white;
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown > a::after {
+  content: "▾";
+  font-size: 0.8rem;
+  margin-left: auto;
+  transition: transform 0.3s ease;
+}
+
+.dropdown:hover > a::after {
+  transform: rotate(-180deg);
+}
+
+.submenu {
+  list-style: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  margin-left: 1rem;
+  background: var(--secondary-bg);
+  border-radius: var(--border-radius-sm);
+  margin-top: 0.5rem;
+}
+
+.dropdown:hover .submenu {
+  max-height: 200px;
+}
+
+.submenu li {
+  margin-bottom: 0;
+}
+
+.submenu a {
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  background-color: transparent;
+}
+
+.submenu a:hover {
+  background-color: var(--accent-light);
+}
+
+/* ===== MAIN CONTENT ===== */
+.main-content {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  padding: 2.5rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.header {
+  margin-bottom: 1rem;
+}
+
+.header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.header p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+/* ===== STOK SECTION ===== */
+.stok-section {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+}
+
+.stok-section h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.stok-section p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+/* ===== TABLE ===== */
+#tabelStok {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background-color: var(--primary-bg);
+}
+
+#tabelStok thead {
+  background-color: var(--accent-color);
+}
+
+#tabelStok thead th {
+  color: white;
+  font-weight: 600;
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 2px solid var(--accent-hover);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+#tabelStok tbody tr {
+  transition: all 0.3s ease;
+  border-bottom: 1px solid var(--border-light);
+}
+
+#tabelStok tbody tr:hover {
+  background-color: var(--accent-light);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.1);
+}
+
+#tabelStok tbody td {
+  padding: 1rem;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-light);
+  font-size: 0.95rem;
+}
+
+#tabelStok tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Styling untuk kolom stok */
+#tabelStok td:nth-child(8) {
+  font-weight: 600;
+  text-align: center;
+}
+
+#tabelStok td:nth-child(8):before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+/* Warna status stok */
+#tabelStok td:nth-child(8)[data-stok="high"]:before {
+  background-color: var(--success-color);
+}
+
+#tabelStok td:nth-child(8)[data-stok="medium"]:before {
+  background-color: var(--warning-color);
+}
+
+#tabelStok td:nth-child(8)[data-stok="low"]:before {
+  background-color: var(--error-color);
+}
+
+/* Styling untuk kolom cover */
+#tabelStok td:nth-child(2) {
+  text-align: center;
+}
+
+#tabelStok td:nth-child(2) img {
+  width: 40px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--border-light);
+  transition: all 0.3s ease;
+}
+
+#tabelStok td:nth-child(2) img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Styling untuk kolom nomor */
+#tabelStok td:first-child {
+  text-align: center;
+  color: var(--text-muted);
+  font-weight: 500;
+  width: 60px;
+}
+
+/* Styling untuk kolom jenis */
+#tabelStok td:nth-child(6) {
+  text-transform: capitalize;
+}
+
+/* Styling untuk kolom edisi */
+#tabelStok td:nth-child(7) {
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+/* ===== TABLE RESPONSIVE STYLES ===== */
+.table-container {
+  overflow-x: auto;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+}
+
+
+#tabelStok tbody:empty::after {
+  content: "Tidak ada data stok yang tersedia";
+  display: block;
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+
